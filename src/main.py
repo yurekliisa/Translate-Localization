@@ -1,6 +1,6 @@
 import sys
-from googletrans import LANGUAGES
 import os
+from googletrans import LANGUAGES
 from translator import Translator
 
 def supportedLanguagesCode():
@@ -25,19 +25,19 @@ def fileName():
     print("Not find file")
     return fileName()
 
-#supportedLanguagesCode()
-defaultLanguageCode = "en"#languageCode()
-defaultLanguageFileName ="word-en" #fileName()
-desctinationLanguages=["tr","de","en"]##[]
+supportedLanguagesCode()
+defaultLanguageCode = languageCode()
+defaultLanguageFileName = fileName()
+desctinationLanguages = []
 print("input is 0(Zero) to complete")
-# while True:    
-#     languageCode = input("Enter destination language code : ")
-#     if languageCode=="0":
-#         break
-#     if languageCode not in LANGUAGES:
-#         print("Not Supported Language Code")
-#         continue
-#     desctinationLanguages.append(languageCode)
+while True:    
+    languageCode = input("Enter destination language code : ")
+    if languageCode=="0":
+        break
+    if languageCode not in LANGUAGES:
+        print("Not Supported Language Code")
+        continue
+    desctinationLanguages.append(languageCode)
 print(list(desctinationLanguages))    
 translator = Translator(defaultLanguageFileName,defaultLanguageCode,desctinationLanguages)
 translator.translate()
